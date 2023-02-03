@@ -1,0 +1,151 @@
+:root {
+  --very-dark-blue: hsl(233, 47%, 7%);
+  --dark-desaturated-blue: hsl(244, 38%, 16%);
+  --soft-violet: hsl(277, 64%, 61%);
+  --bg-violet: hsl(277deg, 100%, 50%, 0.42);
+  --bg-light-violet: hsl(293deg, 42%, 35%, 0.24);
+  --white: hsl(0, 0%, 100%);
+  --slightly-transparent-white-075: hsla(0, 0%, 100%, 0.75);
+  --slightly-transparent-white-06: hsla(0, 0%, 100%, 0.6);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--very-dark-blue);
+}
+
+.card {
+  margin: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: var(--dark-desaturated-blue);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.card-body {
+  padding: 4.5rem 4rem 3.75rem 3.75rem;
+}
+
+.content {
+  max-width: 300px;
+}
+
+.card-body p {
+  font-size: 0.75rem;
+  line-height: 22px;
+  font-family: "Inter", sans-serif;
+  color: var(--slightly-transparent-white-06);
+  margin-bottom: 3.75rem;
+}
+
+h1 {
+  font-size: 1.75rem;
+  color: var(--white);
+  font-weight: 700;
+  font-family: "Inter", sans-serif;
+  margin-bottom: 1.5rem;
+}
+
+h1 span {
+  color: var(--soft-violet);
+}
+
+.boxes {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 50px;
+}
+
+.box {
+  list-style: none;
+}
+
+.box p {
+  color: var(--white);
+  font-size: 1.25rem;
+  font-weight: 700;
+  font-family: "Inter", sans-serif;
+  margin-bottom: 0.25rem;
+}
+
+.box span {
+  color: var(--slightly-transparent-white-06);
+  font-size: 0.75rem;
+  font-weight: 200;
+  font-family: "Lexend Deca", sans-serif;
+  text-transform: uppercase;
+}
+
+.card-image {
+  position: relative;
+}
+.card-image:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: var(--bg-violet);
+}
+
+.card-image:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: var(--bg-light-violet);
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-height: 400px;
+  object-fit: cover;
+}
+
+@media only screen and (max-width: 1023px) {
+  .card-body {
+    padding: 3rem;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .card {
+    display: flex;
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .card-body {
+    padding: 2rem;
+  }
+
+  .card-body .content > p {
+    margin-bottom: 2rem;
+  }
+
+  .boxes {
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.25rem;
+  }
+
+  img {
+    content: url("./images/image-header-mobile.jpg");
+  }
+}
